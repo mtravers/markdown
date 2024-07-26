@@ -12,7 +12,9 @@
 
 (defn clean [_] (b/delete {:path "target"}))
 
-(defn jar [{:keys [version]}]
+(def version "0.5.149")
+
+(defn jar [_]
   (println "buildig jar: " (jar-file version))
   (b/write-pom {:basis basis
                 :class-dir class-dir
@@ -24,6 +26,14 @@
                :target-dir class-dir})
   (b/jar {:class-dir class-dir
           :jar-file (jar-file version)}))
+
+(defn install [_]
+  (b/install {:basis basis
+              :lib lib
+              :version version
+              :jar-file (jar-file version)
+              :class-dir class-dir}))
+
 
 (defn deploy [{:keys [version] :as opts}]
   (println "Deploying version" (jar-file version) "to Clojars.")

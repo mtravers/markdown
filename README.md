@@ -1,3 +1,12 @@
+# mt forked version
+
+Updated build to build in Java 22
+
+## To build and install
+
+clojure -T:build jar
+clojure -T:build install
+
 # nextjournal markdown
 
 [![Clojars Project](https://img.shields.io/clojars/v/io.github.nextjournal/markdown.svg)](https://clojars.org/io.github.nextjournal/markdown) [![Notebooks](https://img.shields.io/static/v1?label=clerk&message=notebooks&color=rgb(155,187,157))](https://nextjournal.github.io/markdown)
