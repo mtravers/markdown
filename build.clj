@@ -12,7 +12,7 @@
 
 (defn clean [_] (b/delete {:path "target"}))
 
-(def version "0.5.149")
+(def version "0.5.150")
 
 (defn jar [_]
   (println "buildig jar: " (jar-file version))
